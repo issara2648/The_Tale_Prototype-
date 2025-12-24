@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="CardData" load_steps=2 format=3 uid="uid://c1a5qwnipmc3f"]
+
+[ext_resource type="Script" path="res://Scripts/CardData.gd" id="1_s6syk"]
+
+[resource]
+script = ExtResource("1_s6syk")
+title = "Attacked"
+description = "รายละเอียด..."
+health_change = -10
+gold_change = 0

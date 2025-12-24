@@ -1,0 +1,69 @@
+[gd_scene load_steps=7 format=3 uid="uid://cy8s83n1ilrvs"]
+
+[ext_resource type="Script" path="res://Scripts/main_game.gd" id="1_fhjpt"]
+[ext_resource type="Script" path="res://Scripts/CardData.gd" id="2_jc1au"]
+[ext_resource type="Resource" uid="uid://c1a5qwnipmc3f" path="res://Resources/Event_Monster.tres" id="3_0indy"]
+[ext_resource type="Texture2D" uid="uid://d0yy2uketq5h2" path="res://Assets/Gemini_Generated_Image_uysdkuuysdkuuysd.png" id="4_obt4y"]
+[ext_resource type="Texture2D" uid="uid://qsfqd5mwct8h" path="res://Assets/icon.svg" id="5_a27jt"]
+[ext_resource type="PackedScene" uid="uid://eyx8bptnix5" path="res://Scene/card_ui.tscn" id="6_1e28j"]
+
+[node name="MainGame" type="Node2D"]
+position = Vector2(-18, 15)
+script = ExtResource("1_fhjpt")
+all_events = Array[ExtResource("2_jc1au")]([ExtResource("3_0indy")])
+
+[node name="Map" type="Sprite2D" parent="."]
+position = Vector2(536, 504)
+texture = ExtResource("4_obt4y")
+
+[node name="PathPoints" type="Node2D" parent="."]
+position = Vector2(142, 96)
+
+[node name="Point1" type="Marker2D" parent="PathPoints"]
+position = Vector2(67, 684)
+
+[node name="Point2" type="Marker2D" parent="PathPoints"]
+position = Vector2(-7, 596)
+
+[node name="Point3" type="Marker2D" parent="PathPoints"]
+position = Vector2(166, 551)
+
+[node name="Point4" type="Marker2D" parent="PathPoints"]
+position = Vector2(103, 498)
+
+[node name="Point5" type="Marker2D" parent="PathPoints"]
+position = Vector2(87, 416)
+
+[node name="Point6" type="Marker2D" parent="PathPoints"]
+position = Vector2(-7, 311)
+
+[node name="Point7" type="Marker2D" parent="PathPoints"]
+position = Vector2(105, 193)
+
+[node name="Point8" type="Marker2D" parent="PathPoints"]
+position = Vector2(245, 134)
+
+[node name="Point9" type="Marker2D" parent="PathPoints"]
+position = Vector2(373, 109)
+
+[node name="Player" type="Sprite2D" parent="."]
+position = Vector2(212, 778)
+scale = Vector2(0.320313, 0.3125)
+texture = ExtResource("5_a27jt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="RollButton" type="Button" parent="CanvasLayer"]
+offset_left = 570.0
+offset_top = 836.0
+offset_right = 1016.0
+offset_bottom = 1000.0
+text = "Roll"
+
+[node name="CardUI" parent="CanvasLayer" instance=ExtResource("6_1e28j")]
+offset_left = 319.0
+offset_top = 270.0
+offset_right = 283.0
+offset_bottom = 200.0
+
+[connection signal="pressed" from="CanvasLayer/RollButton" to="." method="_on_roll_button_pressed"]

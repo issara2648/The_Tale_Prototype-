@@ -1,0 +1,15 @@
+# Godot-specific ignores
+.godot/
+.import/
+export_presets.cfg
+
+# Mono-specific ignores
+.mono/
+GlueSrc/
+Internal/
+Profiling/
+_mono/
+
+# General ignores
+*.log
+*.tmp
